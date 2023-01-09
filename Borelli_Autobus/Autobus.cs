@@ -19,6 +19,19 @@ namespace Borelli_Autobus {
         public Autobus() {
 
         }
+        //funzioni standard
+        public override string ToString() {
+            return $"{this.NumeroTelaio};{this.Targa};{this.Azienda};{this.PasseggeriMax}";
+        }
+        public bool Equals(Autobus a) {
+            if (a == null) {
+                return false;
+            } else if (a == this) {
+                return true;
+            } else {
+                return (a.Targa == this.Targa);
+            }
+        }
         //parte properties
         public string NumeroTelaio {
             get {
