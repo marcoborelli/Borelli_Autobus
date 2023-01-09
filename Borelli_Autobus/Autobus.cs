@@ -55,7 +55,7 @@ namespace Borelli_Autobus {
         public void SpostaPasseggeri(Autobus a) {
             if (a != null) {
                 if (this.Fermo && a.Fermo) {
-                    a.Passeggeri += this.Passeggeri;
+                    a.SalitaPasseggeri(this.Passeggeri);
                     DiscesaPasseggeri(this.Passeggeri);
                 } else {
                     throw new Exception("Entrambi i bus devono essere fermi per eseguire lo scambio");
