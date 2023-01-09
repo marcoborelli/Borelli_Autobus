@@ -83,6 +83,11 @@ namespace Borelli_Autobus {
                 return (a.Targa == this.Targa);
             }
         }
+        public Autobus Clone() {
+            return new Autobus(this);
+        }
+        protected Autobus(Autobus a) : this(a.NumeroTelaio, a.Targa, a.Azienda, a.PasseggeriMax) {
+        }
         //parte properties
         public string NumeroTelaio {
             get {
