@@ -26,12 +26,8 @@ namespace Borelli_Autobus {
         }
         //funzioni specifiche
         public void Partenza() {
-            if (this.Fermo) {
-                this.Fermo = false;
-                this.InDeposito = false; //assumo che se parto lo tolgo dal deposito
-            } else {
-                throw new Exception("Il bus è già in movimento");
-            }
+            this.Fermo = false;
+            this.InDeposito = false; //assumo che se parto lo tolgo dal deposito
         }
         public void SalitaPasseggeri(int pass) {
             if (this.Fermo && !this.InDeposito) {
@@ -42,11 +38,7 @@ namespace Borelli_Autobus {
             }
         }
         public void Fermata() {
-            if (!this.Fermo) {
-                this.Fermo = true;
-            } else {
-                throw new Exception("Il bus è già fermo");
-            }
+            this.Fermo = true;
         }
         public void DiscesaPasseggeri(int pass) {
             if (this.Fermo) {

@@ -18,6 +18,13 @@ namespace Borelli_Autobus {
             Console.WriteLine($"\bSALGONO 130 PASSEGGERI");
             a.SalitaPasseggeri(130);
             Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
+            Console.WriteLine($"SCENDONO 50 PASSEGGERI");
+            a.DiscesaPasseggeri(50);
+            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
+            Console.WriteLine($"IL BUS VA IN DEPOSITO");
+            a.Deposita();
+            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
+            a.SalitaPasseggeri(10);
             Console.ReadKey();
         }
     }
