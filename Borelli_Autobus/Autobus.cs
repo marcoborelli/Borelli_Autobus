@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+//using System.Diagnostics;
 
 namespace Borelli_Autobus {
     public class Autobus {
@@ -11,13 +12,14 @@ namespace Borelli_Autobus {
         private int _passMax, _pass;
         private bool _fermo, _inDeposito;
         //costruttore
-        public Autobus(string nTel, string targ, string aziend, int passMax) {
-            this.NumeroTelaio = nTel;
+        public Autobus(string nTelaio, string targ, string aziend, int passMax) {
+            this.NumeroTelaio = nTelaio;
             this.Targa = targ;
             this.Azienda = aziend;
             this.PasseggeriMax = passMax;
             this.Fermo = true;
             this.InDeposito = false;
+            this.Passeggeri = 0;
         }
         public Autobus() {
 
@@ -33,6 +35,7 @@ namespace Borelli_Autobus {
         }
         public void SalitaPasseggeri(int pass) {
             if (this.Fermo && !this.InDeposito) {
+                //Debug.WriteLine($"PASS: {pass}");
                 this.Passeggeri += pass;
             } else {
                 throw new Exception("Non si possono far salire passeggere se il bus è in movimento o se è in deposito");
@@ -151,8 +154,9 @@ namespace Borelli_Autobus {
                 return _pass;
             }
             set {
-                if (_pass + value >= 0 && _pass + value <= this.PasseggeriMax) {
-                    _pass += value;
+                //Debug.WriteLine($"PASSEGGERI: {_pass}\tPASS MAX: {PasseggeriMax}\tVALUE: {value}");
+                if (value >= 0 && value <= this.PasseggeriMax) {
+                    _pass = value;
                 } else {
                     throw new Exception("Capienza massima raggiunta o tentativo di scendere sotto 0");
                 }
