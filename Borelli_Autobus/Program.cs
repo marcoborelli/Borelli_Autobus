@@ -8,23 +8,16 @@ namespace Borelli_Autobus {
     internal class Program {
         static void Main(string[] args) {
             Autobus a = new Autobus("TELAIO", "FL719BJ", "ARRIVAITALIA", 169);
-            Console.WriteLine($"PARTENZA BUS");
-            a.Partenza();
-            Console.WriteLine($"SALGONO 30 PASSEGGERI\tPRIMA LO FERMO");
+            Autobus b = new Autobus("TELAIO1", "Cd494dJ", "SABFASCHIFO", 100);
+            Console.WriteLine($"PARTENZA BUS A CON 110 PASSEGGERI");
+            a.SalitaPasseggeri(110);
             a.Fermata();
-            a.SalitaPasseggeri(20);
-            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
-            Console.ReadKey();
-            Console.WriteLine($"\bSALGONO 130 PASSEGGERI");
-            a.SalitaPasseggeri(130);
-            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
-            Console.WriteLine($"SCENDONO 50 PASSEGGERI");
-            a.DiscesaPasseggeri(50);
-            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
-            Console.WriteLine($"IL BUS VA IN DEPOSITO");
-            a.Deposita();
-            Console.WriteLine($"PASSEGGERI: {a.Passeggeri}");
-            a.SalitaPasseggeri(10);
+            b.Fermata();
+            Console.WriteLine($"BUS A:\n\tPASS MAX: {a.PasseggeriMax}\n\tPASS ATT: {a.Passeggeri}");
+            Console.WriteLine($"BUS B:\n\tPASS MAX: {b.PasseggeriMax}\n\tPASS ATT: {b.Passeggeri}");
+            a.SpostaPasseggeri(b);
+            Console.WriteLine($"BUS A:\n\tPASS MAX: {a.PasseggeriMax}\n\tPASS ATT: {a.Passeggeri}");
+            Console.WriteLine($"BUS B:\n\tPASS MAX: {b.PasseggeriMax}\n\tPASS ATT: {b.Passeggeri}");
             Console.ReadKey();
         }
     }
