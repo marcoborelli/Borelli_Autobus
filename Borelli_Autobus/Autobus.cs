@@ -21,7 +21,7 @@ namespace Borelli_Autobus {
             this.InDeposito = false;
             this.Passeggeri = 0;
         }
-        public Autobus() {
+        public Autobus() : this("N/A", "AA000AA", "N/A", 0) {
 
         }
         //funzioni specifiche
