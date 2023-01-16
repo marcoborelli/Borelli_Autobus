@@ -1,6 +1,6 @@
 # Borelli_Autobus
 
-###Metodi
+### Metodi
 [1] = Partenza(): il bus parte e non permette più la salita di passeggeri\
 [2] = Fermata(): il bus si ferma, permettendo anche la discesa e la salita di passeggeri\
 [3] = SalitaPasseggeri(int persone): se il bus è fermo e i passeggeri ci stanno viene permeessa la loro salita\
