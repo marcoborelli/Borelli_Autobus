@@ -48,7 +48,7 @@ namespace Borelli_Autobus {
             }
         }
         public void SpostaPasseggeri(Autobus a) {
-            if (a != null) {
+            if (a != null && !Equals(a)) {
                 if (this.Fermo && a.Fermo) {
                     a.SalitaPasseggeri(this.Passeggeri);
                     DiscesaPasseggeri(this.Passeggeri);
