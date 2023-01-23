@@ -32,7 +32,12 @@ namespace Borelli_Autobus {
         public void SalitaPasseggeri(int pass) {
             if (this.Fermo && !this.InDeposito) {
                 //Debug.WriteLine($"PASS: {pass}");
-                this.Passeggeri += pass;
+                if (pass > 0) {
+                    this.Passeggeri += pass;
+                } else {
+                    throw new Exception("Far salire una quantità positiva di passeggeri");
+                }
+
             } else {
                 throw new Exception("Non si possono far salire passeggere se il bus è in movimento o se è in deposito");
             }
@@ -42,7 +47,11 @@ namespace Borelli_Autobus {
         }
         public void DiscesaPasseggeri(int pass) {
             if (this.Fermo) {
-                this.Passeggeri -= pass;
+                if (pass > 0) {
+                    this.Passeggeri -= pass;
+                } else {
+                    throw new Exception("Far scendere una quantità positiva di passeggeri");
+                }
             } else {
                 throw new Exception("Non si possono far scendere passeggere se il bus è in movimento");
             }
